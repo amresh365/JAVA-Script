@@ -1,0 +1,17 @@
+h1 {
+  /* position: relative;
+  top: 80px;
+  left: 30px; */
+  color: blue;
+}
+p {
+  text-transform: capitalize;
+}
+
+body {
+  background-color: blanchedalmond;
+}
+button {
+  color: black;
+  background-color: brown;
+}
