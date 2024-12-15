@@ -640,3 +640,63 @@ known as **Blink**, which is responsible for parsing HTML, CSS, JavaScript, and 
 processes the HTML documents and creates a **Document Object Model (DOM)**, which the browser uses to render the web page.
 
 If you have more specific questions about how it works or other related topics, feel free to ask!
+
+************************************************************************************************************************
+In JavaScript, the execution context is implemented in **memory** primarily through the use of the **Call Stack** and the **heap**. Here is a detailed breakdown of where execution contexts are stored and how they work:
+
+### 1. Call Stack
+
+The **Call Stack** is an important data structure for managing function execution contexts in memory. 
+
+- **How It Works**:
+  - Whenever a function is invoked, a new execution context is created for that function. This includes storing:
+    - The **Variable Environment**: All local variables and function parameters.
+    - The **Scope Chain**: References to outer scopes.
+    - The value of `this`.
+  - This newly created context is pushed onto the Call Stack.
+  - When the function completes execution, its execution context is popped off the stack, and control is returned to the previous context.
+
+- **Memory Characteristics**:
+  - The Call Stack operates in **stack memory**, which is typically managed in a LIFO (Last In, First Out) order.
+  - Each execution context occupies a certain amount of stack memory, and once the function execution finishes, that memory is cleared and made available for future calls.
+
+### 2. Heap Memory
+
+While the execution contexts themselves are stored in the Call Stack, the data for the **objects**, **functions**, and other complex types used within those contexts are stored in **heap memory**.
+
+- **Objects and Functions**:
+  - When you create objects or functions, they are allocated on the heap. The stack keeps track of references to these objects. 
+  - For example, if a function creates an object, that object is stored in the heap, while the reference to it (the variable that holds the object) is stored in the execution context on the stack.
+
+### Summary of Memory Usage
+
+- **Execution Context**: Stored in **stack memory** as part of the Call Stack.
+- **Variables and Functions**: While the context itself resides in the stack, objects and other complex data structures created during execution are stored in **heap memory**.
+
+### Visual Summary
+
+Here’s a simplified representation to illustrate this:
+
+```
+Call Stack: (Stack Memory)
+-------------------------------
+| Execution Context of Function A |
+-------------------------------
+| Execution Context of Function B |
+-------------------------------
+| Execution Context of Global Code |
+-------------------------------
+
+Heap Memory:
+---------------------------------
+| Object 1 (e.g., { name: 'Alice' }) |
+| Function 1 (e.g., function() {...}) |
+| Array 1 (e.g., [1, 2, 3])         |
+---------------------------------
+```
+
+### Conclusion
+
+In conclusion, JavaScript execution contexts are systematically handled through the Call Stack stored in stack memory, while the actual data (objects and functions) that exist within those contexts are stored in heap memory. This separation of memory usage allows JavaScript to efficiently manage function calls and object lifetimes.
+
+If you have more questions or need further clarification on any specific points, feel free to ask!
