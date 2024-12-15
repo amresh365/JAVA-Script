@@ -1,1 +1,231 @@
+# Interview Questions for Front-End Developers
 
+This repository contains interview questions for front-end developers that can be used to filter potential candidates. 
+We do not recommend using every question for every candidate (it would take hours). Selecting a few questions from the 
+list could help assess the skills you're looking for in candidates.
+
+The article "Baseline For Front-End Developers" by Rebecca Murphey is also a great resource to read before conducting an 
+interview.
+
+*Note:* Many of these questions may lead to interesting discussions and can help you better evaluate the candidate's 
+knowledge and thinking process, rather than just receiving direct answers.
+
+## Contents:
+- Project Contributors
+- General Questions
+- HTML Questions
+- CSS Questions
+- JS Questions
+- jQuery Questions
+- Programming-Related Questions
+- Fun Questions
+- Additional Resources
+
+#### [⬆] *Project Contributors:*
+
+Most of the questions are sourced from oksoclap created by Paul Irish (@paul_irish) and thanks to:
+
+- @bentruyman - http://bentruyman.com
+- @cowboy - http://benalman.com
+- @ajpiano - http://ajpiano.com
+- @SlexAxton - http://alexsexton.com
+- @boazsender - http://boazsender.com
+- @miketaylr - http://miketaylr.com
+- @vladikoff - http://vladfilippov.com
+- @gf3 - http://gf3.ca
+- @jon_neal - http://twitter.com/jon_neal
+- @wookiehangover - http://wookiehangover.com
+- @iansym - http://twitter.com/iansym
+
+#### [⬆] *General Questions:*
+
+- What did you learn yesterday/this week?
+- What draws you to writing code?
+- What factors related to UI, security, performance, SEO, maintenance, or technologies do you consider when building web 
+applications or websites?
+- Describe your preferred development environment (OS, editor, browser, tools, etc.).
+- Can you explain the steps you take when creating web pages?
+- Can you explain the differences between progressive enhancement and graceful degradation?
+  - Bonus points for explaining feature detection.
+- What does "Semantic HTML" mean?
+- How would you optimize resource loading for a web page?
+  - Techniques include:
+    - Bundling files
+    - Minifying files
+    - Using CDN
+    - Caching, etc.
+- Why is it a good idea for websites to fetch resources from multiple domains?
+- How many resources can browsers download concurrently from a single domain?
+- Name 3 ways to reduce page load speed (perceived or actual load speed).
+- If you join a project that uses tabs, and you use spaces for indentation, what would you do?
+  - Suggest using EditorConfig or a similar project.
+  - Follow the project's conventions.
+  - Use the :retab! command.
+- Implement a simple slideshow (Bonus points for not using JS).
+- What tools do you use to test the performance of your code?
+  - Examples: Profiler, JSPerf, Dromaeo.
+- If you could learn one technology very well this year, what would it be?
+- What is the difference between Long-Polling, Websockets, and SSE?
+- Explain the importance of standards and standardization organizations.
+- What is FOUC (Flash of Unstyled Content)? How do you deal with it?
+
+#### [⬆] *HTML Questions:*
+
+- What does doctype do?
+- What is the difference between standards mode and quirks mode?
+- What are the limitations of XHTML pages?
+- Are there any issues with processing pages with application/xhtml+xml?
+- How do you return pages with content in multiple languages?
+- What considerations are there when designing or developing multilingual pages?
+- What are HTML attributes that start with data- used for?
+- Imagine HTML5 as an open web platform. What are the building blocks of HTML5?
+- Explain the difference between cookies, sessionStorage, and localStorage.
+
+#### [⬆] *CSS Questions:*
+
+- What is a "reset" CSS file, and why is it necessary?
+- Explain floats and how they work.
+- What are the different clearing techniques, and when would you use each?
+- What are CSS sprites, and how can you implement them on a web page?
+- What are your favorite techniques for replacing images, and in which cases do you use them?
+- Which technique do you prefer: CSS properties for each browser, conditionally included .css files, or something else?
+- How do you display pages on browsers that do not support some HTML5 features?
+- What techniques/processes do you use?
+- What are the different ways to visually hide content from the web page (and make it visible only to screen readers)?
+- Have you used grid systems, and if so, which one do you prefer?
+- Have you used media queries or mobile-specific layouts in CSS?
+- Are you familiar with styling SVGs?
+- How do you optimize your web pages for printing?
+- What are some tricks for writing efficient CSS?
+- What are the pros/cons of using SASS, Compass, Stylus, LESS, and similar?
+- Describe what you like and dislike about using them.
+- How do you implement web designs that use custom fonts?
+  - Web fonts (e.g., Google Webfonts, Typekit, etc.)
+- How do web browsers understand which elements match a CSS selector?
+- How do you understand the box model, and how would you tell the browser to render your layout with a different box model?
+
+#### [⬆] *JS Questions:*
+
+- Explain event delegation.
+- Explain how this works in JavaScript.
+- Explain how prototype interfaces work.
+- How do you test your JavaScript?
+- AMD or CommonJS?
+- What is a hash table?
+- Explain why this code doesn't work as an IIFE: function foo(){ }();.
+  - What needs to be changed for the code to work as an IIFE?
+- What is the difference between a variable being null, undefined, or undeclared?
+- How do you check each of these variable states?
+- What is closure? How and why is it used?
+- What are typical uses of anonymous functions?
+- Explain the "JavaScript module pattern" and when it is used.
+  - Bonus points for mentioning "pollution of the global scope".
+- What will happen if modules have no namespace?
+- How do you organize your code? (Module pattern, classical inheritance, etc.)
+- What is the difference between host objects and native objects?
+- What is the difference between function Person(){}, var person = Person(), and var person = new Person()?
+- What is the difference between .call and .apply?
+- Explain Function.prototype.bind.
+- When do you optimize your code?
+- Can you explain how inheritance works in JavaScript?
+- In what cases would you use document.write()?
+  - Most generated ads still use document.write().
+- What is the difference between feature detection, feature inference, and using browser information?
+- Explain AJAX in as much detail as possible.
+- Explain how JSONP works (and why it's not exactly AJAX).
+- Have you used JavaScript templates?
+  - If so, which library did you use? (Mustache.js, Handlebars, etc.)
+- Explain "hoisting".
+- Explain event bubbling.
+- What is the difference between "attribute" and "property"?
+- Why is extending built-in JavaScript objects a bad idea?
+- Why is extending built-in objects a good idea?
+- What is the difference between the "document load" and "document ready" events?
+- What is the difference between == and ===?
+- Explain how to get the query string parameter from the browser's address.
+- Explain the same-origin policy from a JavaScript perspective.
+- Describe inheritance patterns in JavaScript.
+- Fix the code so that it works:
+  javascript
+  [1, 2, 3, 4, 5].duplicate(); // [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+  
+- Describe a memoization strategy (avoiding repeated calculations) in JavaScript.
+- Why is the ternary operator called that? What does the word "ternary" mean?
+- What is the arity of a function?
+- What is "use strict";? What are the advantages and disadvantages of using it in your code?
+
+#### [⬆] *jQuery Questions:*
+
+- Explain "chaining".
+- Explain "deferreds".
+- What jQuery optimizations can you make?
+- What does .end() do?
+- How and why would you place a bound event handler in a namespace?
+- Name 4 different types of values you can pass to a jQuery method:
+  - Selector (string), HTML (string), Callback (function), HTMLElement, object, array, element array, jQuery Object, etc.
+- What is the effects (or fx) queue?
+- What is the difference between .get(), [], and .eq()?
+- What is the difference between .bind(), .live(), and .delegate()?
+- What is the difference between $ and $.fn? Or simply: What is $.fn?
+- Optimize this selector:
+  javascript
+  $(".foo div#bar:eq(0)")
+  
+
+#### [⬆] *Programming-Related Questions:*
+
+- modulo(12, 5) // 2  
+  *Question:* Implement a function for finding the remainder of division that returns 2 when the arguments are 12 and 5.
+
+- "i'm a lasagna hog".split("").reverse().join("")
+
+Here is the content you provided, translated into English:
+
+---
+
+### [⬆] Programming Questions:
+
+*modulo(12, 5) // 2*  
+Question: Implement a function that returns the remainder of the division that satisfies the above condition 
+(should return 2 when the arguments are 12 and 5).
+
+*"i'm a lasagna hog".split("").reverse().join("");*  
+Question: What will the above expression return?  
+Answer: "goh angasal a m'i"
+
+*( window.foo || ( window.foo = "bar" ) );*  
+Question: What is the value of window.foo?  
+Answer: "bar" if window.foo has a false value; otherwise, it will take the value of window.foo.
+
+*var foo = "Hello"; (function() { var bar = " World"; alert(foo + bar); })(); alert(foo + bar);*  
+Question: What will the two alert functions output from the above code?  
+Answer: "Hello World" and ReferenceError: bar is not defined
+
+*var foo = []; foo.push(1); foo.push(2);*  
+Question: What is the value of foo.length?  
+Answer: 2
+
+---
+
+### [⬆] Fun Questions:
+
+*What is the coolest thing you’ve written that you are most proud of?*
+
+*What do you like the most about the developer tools you use?*
+
+*Do you work on any projects as a hobby? What kind?*
+
+*What do you like most about Internet Explorer?*
+
+---
+
+### [⬆] Additional Resources:
+
+- [Programmers StackExchange - What technical details should a programmer of a web application consider before
+starting?](http://programmers.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before)
+- [NCZOnline Blog - Interviewing the Front-End Engineer](http://www.nczonline.net/blog/2010/01/05/interviewing-the-front-end-engineer/)
+- [CSS Tricks - Interview Questions for CSS](http://css-tricks.com/interview-questions-css/)
+
+---
+
+Let me know if you'd like any further modifications!
