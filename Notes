@@ -618,3 +618,8 @@ The terms *JavaScript engine* and *JavaScript compiler* are often used in discus
 
 ### Summary
 In short, a JavaScript engine is the complete environment that runs JavaScript code, while a compiler is a part of that engine (or a separate tool) that translates code into an executable format. Most modern JavaScript engines contain compilers as part of their functionality to improve performance through optimization techniques. If you have any specific questions or want more details, feel free to ask!
+****************************************************************************************************************************
+
+The compiler that parses HTML in Chrome is called the **HTML Parser**. Chrome uses a component of its rendering engine, known as **Blink**, which is responsible for parsing HTML, CSS, JavaScript, and other web content. The HTML Parser processes the HTML documents and creates a **Document Object Model (DOM)**, which the browser uses to render the web page.
+
+If you have more specific questions about how it works or other related topics, feel free to ask!
