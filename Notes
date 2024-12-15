@@ -173,3 +173,448 @@ Most of the questions are sourced from oksoclap created by Paul Irish (@paul_iri
   *Question:* Implement a function for finding the remainder of division that returns 2 when the arguments are 12 and 5.
 
 - "i'm a lasagna hog".split("").reverse().join("")
+
+Here is the content you provided, translated into English:
+
+---
+
+### [⬆] Programming Questions:
+
+*modulo(12, 5) // 2*  
+Question: Implement a function that returns the remainder of the division that satisfies the above condition (should return 2 when the arguments are 12 and 5).
+
+*"i'm a lasagna hog".split("").reverse().join("");*  
+Question: What will the above expression return?  
+Answer: "goh angasal a m'i"
+
+*( window.foo || ( window.foo = "bar" ) );*  
+Question: What is the value of window.foo?  
+Answer: "bar" if window.foo has a false value; otherwise, it will take the value of window.foo.
+
+*var foo = "Hello"; (function() { var bar = " World"; alert(foo + bar); })(); alert(foo + bar);*  
+Question: What will the two alert functions output from the above code?  
+Answer: "Hello World" and ReferenceError: bar is not defined
+
+*var foo = []; foo.push(1); foo.push(2);*  
+Question: What is the value of foo.length?  
+Answer: 2
+
+---
+
+### [⬆] Fun Questions:
+
+*What is the coolest thing you’ve written that you are most proud of?*
+
+*What do you like the most about the developer tools you use?*
+
+*Do you work on any projects as a hobby? What kind?*
+
+*What do you like most about Internet Explorer?*
+
+---
+
+### [⬆] Additional Resources:
+
+- [Programmers StackExchange - What technical details should a programmer of a web application consider before starting?](http://programmers.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before)
+- [NCZOnline Blog - Interviewing the Front-End Engineer](http://www.nczonline.net/blog/2010/01/05/interviewing-the-front-end-engineer/)
+- [CSS Tricks - Interview Questions for CSS](http://css-tricks.com/interview-questions-css/)
+
+---
+
+Let me know if you'd like any further modifications!
+*********************************************************************************************************************************************************************
+Absolutely! Promises in JavaScript provide a more elegant way to handle asynchronous operations compared to traditional callbacks. Here's a simple example to illustrate how a function can return a promise:
+
+javascript
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    // Simulate an asynchronous operation using setTimeout
+    setTimeout(() => {
+      const data = "Hello, world!";
+      resolve(data); // Resolve the promise with the data
+    }, 2000);
+  });
+}
+
+// Using the promise
+fetchData()
+  .then((data) => {
+    console.log(data); // Output: Hello, world!
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+In this example, fetchData returns a promise that resolves with the string "Hello, world!" after a 2-second delay. The .then method is used to handle the resolved value, and the .catch method is used to handle any errors that might occur.
+
+Promises make it easier to manage asynchronous code and avoid the so-called "callback hell." If you have any specific use cases or need further examples, feel free to ask!
+*************************************************************************************************************************************************************************
+The *postfix operator* (++ and --) in JavaScript (and many other languages) is used to increment or decrement a variable's value *after* the current value is used in an expression. 
+
+For var, let, and const, the postfix operator works in the same way, but there are important distinctions based on how each type of variable behaves:
+
+### 1. **var**:
+- **var** is function-scoped and can be re-assigned. It can be used with the postfix operator (++ or --).
+  
+  Example:
+  javascript
+  var x = 5;
+  console.log(x++);  // Outputs: 5 (original value)
+  console.log(x);    // Outputs: 6 (incremented value)
+  
+
+### 2. **let**:
+- **let** is block-scoped and can also be re-assigned. It can be used with the postfix operator just like var.
+  
+  Example:
+  javascript
+  let y = 3;
+  console.log(y--);  // Outputs: 3 (original value)
+  console.log(y);    // Outputs: 2 (decremented value)
+  
+
+### 3. **const**:
+- **const** creates a constant variable, meaning its value *cannot* be re-assigned after initialization. 
+- *Important*: The postfix increment/decrement operators (++ and --) *are allowed* to modify the value of a const variable, but only *if the variable itself is an object or array* (which can have their internal properties or elements changed). However, trying to modify the value of a primitive const will result in an error.
+  
+  Example with an array:
+  javascript
+  const z = [1];
+  console.log(z[0]++);  // Outputs: 1 (original value)
+  console.log(z[0]);    // Outputs: 2 (incremented value)
+  
+
+  But with a primitive value, this would throw an error:
+  javascript
+  const a = 5;
+  a++;  // TypeError: Assignment to constant variable.
+  
+
+### Summary of behavior:
+- var and let: Can be incremented/decremented with ++ and --.
+- const: Can only use ++ or -- if modifying properties of an object or elements of an array, but you cannot reassign the variable itself.
+
+In all cases, the postfix increment (x++) will return the value before the increment, while the prefix increment (++x) would return the value after incrementing.
+********************************************************************************************************************************************************************
+Understanding the difference between higher-order functions and callback functions is important in JavaScript programming. Here's a breakdown of each concept:
+
+Higher-Order Function
+Definition: A higher-order function is a function that either takes one or more functions as arguments or returns a function or both.
+
+Purpose: Higher-order functions are primarily used to create abstractions and reuse code effectively. They allow for more complex behavior by enabling functions to accept other functions as inputs or to return functions.
+
+Example:
+
+javascript
+function add(x, y) {  
+    return x + y;  
+}  
+
+function higherOrderFunc(fn, a, b) {  
+    return fn(a, b); // Takes a function and two numbers, applies the function to them  
+}  
+
+console.log(higherOrderFunc(add, 5, 3)); // Output: 8  
+In this example, higherOrderFunc is a higher-order function because it takes a function (add) as an argument.
+
+Callback Function
+Definition: A callback function is a function that is passed as an argument to another function and is intended to be executed at a later time, typically as part of that function's operation.
+
+Purpose: Callbacks are especially useful for asynchronous operations, such as making HTTP requests or handling events, where you want a function to execute once a certain task is complete.
+
+Example:
+
+javascript
+function fetchData(callback) {  
+    setTimeout(() => {  
+        const data = { message: "Hello, World!" };  
+        callback(data); // Invokes the callback with the fetched data  
+    }, 1000);  
+}  
+
+fetchData((result) => {  
+    console.log(result.message); // Output: Hello, World!  
+});  
+In this example, the anonymous function passed to fetchData is a callback function that gets executed after data is fetched.
+
+Key Differences
+Definition:
+
+Higher-order functions are about the capability of functions to accept or return other functions.
+Callback functions are specifically functions that are passed into other functions for later execution.
+Purpose:
+
+Higher-order functions provide a way to abstract behavior and process functions at a higher level.
+Callback functions are typically used for handling asynchronous events, allowing an action to take place once a task is completed.
+Usage:
+
+Higher-order functions can be used in various contexts beyond just callbacks, such as functional programming techniques (e.g., map, filter, reduce).
+Callbacks are often used in event handling, timers, and asynchronous API calls.
+Summary
+While callbacks can be utilized within higher-order functions, not all higher-order functions are used strictly as callbacks. Higher-order functions serve as a broader category that encompasses any function that deals with other functions, whereas callbacks are a specific use case of functions that are invoked later.
+
+If you have any more questions or need further clarification on anything, feel free to ask!
+************************************************************************************************************************************************************************
+Passing values between components in React without using Redux, useContext, or props can be achieved through a few alternative methods. Here are some common approaches:
+
+1. *Event Emitter*: You can create a simple event emitter to decouple components. This allows one component to emit an event and another component to listen for it.
+
+   javascript
+   import { EventEmitter } from 'events';
+
+   const emitter = new EventEmitter();
+
+   // Component 1: Emitting a value
+   function ComponentOne() {
+       const handleClick = () => {
+           emitter.emit('valueChange', 'Hello from Component One!');
+       };
+
+       return <button onClick={handleClick}>Send Value</button>;
+   }
+
+   // Component 2: Listening for the value
+   function ComponentTwo() {
+       const [value, setValue] = useState('');
+
+       useEffect(() => {
+           const handleValueChange = (newValue) => {
+               setValue(newValue);
+           };
+
+           emitter.on('valueChange', handleValueChange);
+
+           return () => {
+               emitter.off('valueChange', handleValueChange);
+           };
+       }, []);
+
+       return <div>{value}</div>;
+   }
+   
+
+2. *Local Storage or Session Storage*: You can store data in localStorage or sessionStorage, making it accessible from any component across your application.
+
+   javascript
+   // Component 1: Storing a value
+   function ComponentOne() {
+       const handleClick = () => {
+           localStorage.setItem('sharedValue', 'Hello from Component One!');
+       };
+
+       return <button onClick={handleClick}>Store Value</button>;
+   }
+
+   // Component 2: Retrieving a value
+   function ComponentTwo() {
+       const [value, setValue] = useState('');
+
+       useEffect(() => {
+           const storedValue = localStorage.getItem('sharedValue');
+           if (storedValue) {
+               setValue(storedValue);
+           }
+       }, []);
+
+       return <div>{value}</div>;
+   }
+   
+
+3. *Callback Functions in Parent Component*: If both components share a common parent, you can define a state in the parent and pass down callback functions to update that state.
+
+   javascript
+   function ParentComponent() {
+       const [value, setValue] = useState('');
+
+       const handleValueChange = (newValue) => {
+           setValue(newValue);
+       };
+
+       return (
+           <>
+               <ComponentOne onValueChange={handleValueChange} />
+               <ComponentTwo value={value} />
+           </>
+       );
+   }
+
+   function ComponentOne({ onValueChange }) {
+       const handleClick = () => {
+           onValueChange('Hello from Component One!');
+       };
+
+       return <button onClick={handleClick}>Send Value</button>;
+   }
+
+   function ComponentTwo({ value }) {
+       return <div>{value}</div>;
+   }
+   
+
+4. *Custom Hooks*: You can create a custom hook to share logic and state between components while keeping them decoupled.
+
+   javascript
+   function useSharedValue() {
+       const [value, setValue] = useState('');
+
+       const updateValue = (newValue) => {
+           setValue(newValue);
+       };
+
+       return [value, updateValue];
+   }
+
+   function ComponentOne({ updateValue }) {
+       const handleClick = () => {
+           updateValue('Hello from Component One!');
+       };
+
+       return <button onClick={handleClick}>Send Value</button>;
+   }
+
+   function ComponentTwo() {
+       const [value] = useSharedValue(); // Must be one shared instance
+
+       return <div>{value}</div>;
+   }
+   
+
+### Summary
+These methods enable you to pass information between React components without relying on Redux, useContext, or props. The best approach depends on your specific needs and application structure. If you need further details or examples, feel free to ask!
+*************************************************************************************************************************************************************************
+Here are some popular JavaScript runtimes:
+
+V8: Developed by Google, V8 is the JavaScript engine used in Chrome and Node.js. It compiles JavaScript to native machine code for fast execution.
+
+SpiderMonkey: Developed by Mozilla, SpiderMonkey is the JavaScript engine used in Firefox. It was the first JavaScript engine and supports many modern JavaScript features.
+
+JavaScriptCore (Nitro): This is the JavaScript engine developed by Apple for Safari. It is known as Nitro and is optimized for performance.
+
+Chakra: Developed by Microsoft, Chakra is the JavaScript engine that powers the Edge browser (legacy version). It supports many modern JavaScript features and is designed for high performance.
+
+Duktape: A lightweight JavaScript engine designed for embedding in C/C++ applications. It is suitable for resource-constrained environments.
+
+QuickJS: A small and embeddable JavaScript engine that supports the ES2020 specification. It is designed for quick startup times and minimal footprint.
+
+Node.js: While technically a runtime environment, Node.js uses the V8 engine and provides additional libraries and APIs for building server-side applications.
+
+These runtimes serve various purposes, from web browsers to server-side applications, and each has its own strengths and use cases. If you have any specific questions about a particular runtime or need more details, feel free to ask!
+
+Node.js: While technically a runtime environment, Node.js uses the V8 engine and provides additional libraries and APIs for building server-side applications.
+
+V8: Developed by Google, V8 is the JavaScript engine used in Chrome and Node.js. It compiles JavaScript to native machine code for fast execution.
+*************************************************************************************************************************************************************************
+Here are some popular JavaScript runtimes:
+
+V8: Developed by Google, V8 is the JavaScript engine used in Chrome and Node.js. It compiles JavaScript to native machine code for fast execution.
+
+SpiderMonkey: Developed by Mozilla, SpiderMonkey is the JavaScript engine used in Firefox. It was the first JavaScript engine and supports many modern JavaScript features.
+
+JavaScriptCore (Nitro): This is the JavaScript engine developed by Apple for Safari. It is known as Nitro and is optimized for performance.
+
+Chakra: Developed by Microsoft, Chakra is the JavaScript engine that powers the Edge browser (legacy version). It supports many modern JavaScript features and is designed for high performance.
+
+Duktape: A lightweight JavaScript engine designed for embedding in C/C++ applications. It is suitable for resource-constrained environments.
+
+QuickJS: A small and embeddable JavaScript engine that supports the ES2020 specification. It is designed for quick startup times and minimal footprint.
+
+Node.js: While technically a runtime environment, Node.js uses the V8 engine and provides additional libraries and APIs for building server-side applications.
+
+These runtimes serve various purposes, from web browsers to server-side applications, and each has its own strengths and use cases. If you have any specific questions about a particular runtime or need more details, feel free to ask!
+***************************************************************************************************************************************************************
+The terms "JavaScript runtime environment" and "JavaScript compiler" refer to different aspects of how JavaScript code is executed and processed. Here’s a breakdown of the differences between the two:
+
+### JavaScript Runtime Environment
+
+1. *Definition:*
+   - A JavaScript runtime environment is a context in which JavaScript code is executed. It provides the necessary infrastructure for running JavaScript code outside of a web browser or in a specific environment.
+
+2. *Examples:*
+   - *Node.js:* A popular runtime that allows you to run JavaScript on the server side.
+   - *Web Browsers:* Browsers like Chrome, Firefox, and Safari have their own JavaScript engines (like V8 in Chrome) that provide a runtime environment for executing JavaScript code in web pages.
+
+3. *Functionality:*
+   - The runtime environment includes:
+     - *Execution Context:* Manages the execution of code, including variable scope and function execution.
+     - *APIs:* Provides access to various built-in APIs (like the DOM in browsers, or file system access in Node.js).
+     - *Event Loop:* Handles asynchronous operations and manages the execution of code, allowing for non-blocking I/O.
+
+4. *Purpose:*
+   - The primary purpose of a JavaScript runtime environment is to execute JavaScript code and provide the necessary resources and APIs for the code to interact with the environment (like the web page or server).
+
+### JavaScript Compiler
+
+1. *Definition:*
+   - A JavaScript compiler translates JavaScript code into a different form, typically machine code or an intermediate representation, that can be executed by a runtime environment.
+
+2. *Examples:*
+   - *Babel:* A popular JavaScript compiler that transpiles modern JavaScript (ES6+) into older versions (like ES5) for compatibility with older browsers.
+   - *TypeScript Compiler:* Compiles TypeScript (a superset of JavaScript) into plain JavaScript.
+
+3. *Functionality:*
+   - The compiler performs tasks such as:
+     - *Syntax Checking:* Validates the code for errors and ensures it adheres to the language rules.
+     - *Transpilation:* Converts newer syntax or features into older ones for compatibility.
+     - *Optimization:* May optimize the code for better performance during execution.
+
+4. *Purpose:*
+   - The primary purpose of a JavaScript compiler is to transform code from one form to another, making it suitable for execution in a specific runtime environment.
+
+### Summary
+
+- *JavaScript Runtime Environment:* 
+  - Executes JavaScript code and provides the necessary APIs and execution context. Examples include Node.js and web browsers.
+
+- *JavaScript Compiler:* 
+  - Translates JavaScript (or other languages like TypeScript) into executable code, often optimizing it for performance and compatibility. Examples include Babel and the TypeScript compiler.
+
+In essence, the runtime environment is where your JavaScript code runs, while the compiler is a tool that prepares your code for execution in that environment. Let me know if you have further questions or need more details!
+*************************************************************************************************************************************************************************
+A JavaScript engine consists of several key components that work together to execute JavaScript code. Here’s a brief overview:
+
+1. *Parser*: This component converts the source code into an abstract syntax tree (AST). It checks the syntactic validity of the code, ensuring that it follows JavaScript grammar rules.
+
+2. *Interpreter/Compiler*: Many modern JavaScript engines use a combination of interpretation and compilation:
+   - *Interpreter*: Executes the script line-by-line or statement-by-statement.
+   - *Compiler*: Compiles frequently used functions or scripts into optimized machine code for faster execution (like Just-In-Time (JIT) compilation).
+
+3. *Abstract Syntax Tree (AST)*: A tree representation of the structure of the JavaScript code derived from parsing. It helps in understanding and transforming the code.
+
+4. *Memory Management*: This includes a garbage collector that automatically handles the allocation and deallocation of memory, cleaning up unused objects to prevent memory leaks.
+
+5. *Execution Context*: This manages the environment in which JavaScript code is evaluated, including variable scope, the value of this, and closures.
+
+6. *Event Loop*: This is crucial for handling asynchronous operations. It allows the engine to execute code, collect and process events, and execute queued sub-tasks.
+
+7. *Just-In-Time (JIT) Compiler*: This component compiles JavaScript code at runtime, aiming to improve performance. It optimizes frequently executed code paths to speed up execution.
+
+8. *API Interfaces*: JavaScript engines provide APIs to interact with the browser or runtime environment, allowing execution of functions related to the Document Object Model (DOM), asynchronous operations, networking, etc.
+
+Each of these components plays a vital role in the overall functioning of a JavaScript engine, enabling efficient and effective execution of JavaScript programs. If you’d like to dive deeper into any of these components, just let me know!
+*****************************************************************************************************************************************************************
+The terms *JavaScript engine* and *JavaScript compiler* are often used in discussions about running JavaScript, but they refer to different concepts. Here’s a breakdown of their differences:
+
+### 1. *Definition*:
+- *JavaScript Engine*: A program or runtime environment that executes JavaScript code. It can parse, interpret, and compile the code, enabling it to run in web browsers (like Chrome's V8, Firefox's SpiderMonkey) or server environments (like Node.js).
+  
+- *JavaScript Compiler*: A component (or tool) that translates JavaScript code into another form, typically machine code or bytecode, which can be executed by a JavaScript engine. Some engines include a compiler as part of their functionality, particularly for optimizing performance.
+
+### 2. *Functionality*:
+- *JavaScript Engine*: Handles the entire process of executing JavaScript, including parsing the code, converting it into an abstract syntax tree (AST), interpreting or compiling it, and managing memory and execution contexts.
+
+- *JavaScript Compiler*: Specifically focuses on transforming JavaScript code into an optimized representation that the engine can execute. This may involve Just-In-Time (JIT) compilation or ahead-of-time (AOT) compilation.
+
+### 3. *Examples*:
+- *JavaScript Engine*: 
+  - *V8*: Used in Google Chrome and Node.js.
+  - *SpiderMonkey*: Used in Mozilla Firefox.
+  - *JavaScriptCore*: Used in Safari.
+
+- *JavaScript Compiler*: Many engines contain built-in compilers (e.g., V8 has a JIT compiler), so when discussing just the compiler, we might talk about the compilation process within these engines rather than standalone compilers.
+
+### 4. *Execution*:
+- *JavaScript Engine*: After parsing the code, it decides how to execute it, either by interpreting it directly or compiling it into machine code for later execution.
+
+- *JavaScript Compiler*: Produces a lower-level representation of the JavaScript code (like bytecode or machine code) that the engine then executes.
+
+### Summary
+In short, a JavaScript engine is the complete environment that runs JavaScript code, while a compiler is a part of that engine (or a separate tool) that translates code into an executable format. Most modern JavaScript engines contain compilers as part of their functionality to improve performance through optimization techniques. If you have any specific questions or want more details, feel free to ask!
