@@ -1,10 +1,14 @@
 # Interview Questions for Front-End Developers
 
-This repository contains interview questions for front-end developers that can be used to filter potential candidates. We do not recommend using every question for every candidate (it would take hours). Selecting a few questions from the list could help assess the skills you're looking for in candidates.
+This repository contains interview questions for front-end developers that can be used to filter potential candidates. 
+We do not recommend using every question for every candidate (it would take hours). Selecting a few questions from the 
+list could help assess the skills you're looking for in candidates.
 
-The article "Baseline For Front-End Developers" by Rebecca Murphey is also a great resource to read before conducting an interview.
+The article "Baseline For Front-End Developers" by Rebecca Murphey is also a great resource to read before conducting an 
+interview.
 
-*Note:* Many of these questions may lead to interesting discussions and can help you better evaluate the candidate's knowledge and thinking process, rather than just receiving direct answers.
+*Note:* Many of these questions may lead to interesting discussions and can help you better evaluate the candidate's 
+knowledge and thinking process, rather than just receiving direct answers.
 
 ## Contents:
 - Project Contributors
@@ -37,7 +41,8 @@ Most of the questions are sourced from oksoclap created by Paul Irish (@paul_iri
 
 - What did you learn yesterday/this week?
 - What draws you to writing code?
-- What factors related to UI, security, performance, SEO, maintenance, or technologies do you consider when building web applications or websites?
+- What factors related to UI, security, performance, SEO, maintenance, or technologies do you consider when building web 
+applications or websites?
 - Describe your preferred development environment (OS, editor, browser, tools, etc.).
 - Can you explain the steps you take when creating web pages?
 - Can you explain the differences between progressive enhancement and graceful degradation?
@@ -181,7 +186,8 @@ Here is the content you provided, translated into English:
 ### [⬆] Programming Questions:
 
 *modulo(12, 5) // 2*  
-Question: Implement a function that returns the remainder of the division that satisfies the above condition (should return 2 when the arguments are 12 and 5).
+Question: Implement a function that returns the remainder of the division that satisfies the above condition 
+(should return 2 when the arguments are 12 and 5).
 
 *"i'm a lasagna hog".split("").reverse().join("");*  
 Question: What will the above expression return?  
@@ -215,7 +221,8 @@ Answer: 2
 
 ### [⬆] Additional Resources:
 
-- [Programmers StackExchange - What technical details should a programmer of a web application consider before starting?](http://programmers.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before)
+- [Programmers StackExchange - What technical details should a programmer of a web application consider before
+starting?](http://programmers.stackexchange.com/questions/46716/what-technical-details-should-a-programmer-of-a-web-application-consider-before)
 - [NCZOnline Blog - Interviewing the Front-End Engineer](http://www.nczonline.net/blog/2010/01/05/interviewing-the-front-end-engineer/)
 - [CSS Tricks - Interview Questions for CSS](http://css-tricks.com/interview-questions-css/)
 
@@ -594,14 +601,19 @@ Each of these components plays a vital role in the overall functioning of a Java
 The terms *JavaScript engine* and *JavaScript compiler* are often used in discussions about running JavaScript, but they refer to different concepts. Here’s a breakdown of their differences:
 
 ### 1. *Definition*:
-- *JavaScript Engine*: A program or runtime environment that executes JavaScript code. It can parse, interpret, and compile the code, enabling it to run in web browsers (like Chrome's V8, Firefox's SpiderMonkey) or server environments (like Node.js).
+- *JavaScript Engine*: A program or runtime environment that executes JavaScript code. It can parse, interpret, and compile 
+the code, enabling it to run in web browsers (like Chrome's V8, Firefox's SpiderMonkey) or server environments (like Node.js).
   
-- *JavaScript Compiler*: A component (or tool) that translates JavaScript code into another form, typically machine code or bytecode, which can be executed by a JavaScript engine. Some engines include a compiler as part of their functionality, particularly for optimizing performance.
+- *JavaScript Compiler*: A component (or tool) that translates JavaScript code into another form, typically machine code or
+bytecode, which can be executed by a JavaScript engine. Some engines include a compiler as part of their
+functionality, particularly for optimizing performance.
 
 ### 2. *Functionality*:
-- *JavaScript Engine*: Handles the entire process of executing JavaScript, including parsing the code, converting it into an abstract syntax tree (AST), interpreting or compiling it, and managing memory and execution contexts.
+- *JavaScript Engine*: Handles the entire process of executing JavaScript, including parsing the code, converting it into 
+an abstract syntax tree (AST), interpreting or compiling it, and managing memory and execution contexts.
 
-- *JavaScript Compiler*: Specifically focuses on transforming JavaScript code into an optimized representation that the engine can execute. This may involve Just-In-Time (JIT) compilation or ahead-of-time (AOT) compilation.
+- *JavaScript Compiler*: Specifically focuses on transforming JavaScript code into an optimized representation that the 
+engine can execute. This may involve Just-In-Time (JIT) compilation or ahead-of-time (AOT) compilation.
 
 ### 3. *Examples*:
 - *JavaScript Engine*: 
@@ -609,17 +621,22 @@ The terms *JavaScript engine* and *JavaScript compiler* are often used in discus
   - *SpiderMonkey*: Used in Mozilla Firefox.
   - *JavaScriptCore*: Used in Safari.
 
-- *JavaScript Compiler*: Many engines contain built-in compilers (e.g., V8 has a JIT compiler), so when discussing just the compiler, we might talk about the compilation process within these engines rather than standalone compilers.
+- *JavaScript Compiler*: Many engines contain built-in compilers (e.g., V8 has a JIT compiler), so when discussing just
+the compiler, we might talk about the compilation process within these engines rather than standalone compilers.
 
 ### 4. *Execution*:
-- *JavaScript Engine*: After parsing the code, it decides how to execute it, either by interpreting it directly or compiling it into machine code for later execution.
+- *JavaScript Engine*: After parsing the code, it decides how to execute it, either by interpreting it directly or 
+compiling it into machine code for later execution.
 
-- *JavaScript Compiler*: Produces a lower-level representation of the JavaScript code (like bytecode or machine code) that the engine then executes.
+- *JavaScript Compiler*: Produces a lower-level representation of the JavaScript code (like bytecode or machine code) 
+that the engine then executes.
 
 ### Summary
 In short, a JavaScript engine is the complete environment that runs JavaScript code, while a compiler is a part of that engine (or a separate tool) that translates code into an executable format. Most modern JavaScript engines contain compilers as part of their functionality to improve performance through optimization techniques. If you have any specific questions or want more details, feel free to ask!
 ****************************************************************************************************************************
 
-The compiler that parses HTML in Chrome is called the **HTML Parser**. Chrome uses a component of its rendering engine, known as **Blink**, which is responsible for parsing HTML, CSS, JavaScript, and other web content. The HTML Parser processes the HTML documents and creates a **Document Object Model (DOM)**, which the browser uses to render the web page.
+The compiler that parses HTML in Chrome is called the **HTML Parser**. Chrome uses a component of its rendering engine, 
+known as **Blink**, which is responsible for parsing HTML, CSS, JavaScript, and other web content. The HTML Parser
+processes the HTML documents and creates a **Document Object Model (DOM)**, which the browser uses to render the web page.
 
 If you have more specific questions about how it works or other related topics, feel free to ask!
