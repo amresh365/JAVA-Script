@@ -470,3 +470,19 @@ Heap Memory:
 In conclusion, JavaScript execution contexts are systematically handled through the Call Stack stored in stack memory, while the actual data (objects and functions) that exist within those contexts are stored in heap memory. This separation of memory usage allows JavaScript to efficiently manage function calls and object lifetimes.
 
 If you have more questions or need further clarification on any specific points, feel free to ask!
+*******************************************************************************************************
+Debouncing and throttling are both techniques used in programming to control the rate at which a function is executed, especially in response to events like scrolling or resizing. However, they serve different purposes and work in distinct ways:
+
+### Debouncing
+- **Purpose**: Debouncing is used to ensure that a function is only executed after a certain amount of time has passed since the last time it was invoked. This helps to prevent the function from being called too frequently.
+- **How it Works**: When an event occurs, the debounced function sets a timer. If new events occur before the timer expires, the timer resets. The function will only be executed once the timer completes without interruption. It's ideal for scenarios like form validation, search input, or resize events where you want to wait for the user to stop typing or resizing before processing.
+
+### Throttling
+- **Purpose**: Throttling, on the other hand, ensures that a function is called at most once in a specified time period (interval). This prevents the function from being executed too often and is useful in scenarios where you want consistent performance without overwhelming the system.
+- **How it Works**: When an event occurs, a throttled function executes immediately and then sets a timer for the specified interval. During this interval, any additional events will be ignored. This is useful for operations like scroll events, where you want to execute a function at regular intervals, regardless of how many times the event is triggered.
+
+### Summary
+- **Debouncing**: Executes a function after a delay following the last event.
+- **Throttling**: Executes a function at regular intervals during the event.
+
+If you need more detailed examples or use cases for either technique, feel free to ask!
