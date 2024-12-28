@@ -1,4 +1,4 @@
-This aldo example of Currying
+This also example of Currying
 
 let sum = function (a) {
   return function (b) {
