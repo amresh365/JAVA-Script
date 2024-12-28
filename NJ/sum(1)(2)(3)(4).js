@@ -1,3 +1,5 @@
+This aldo example of Currying
+
 let sum = function (a) {
   return function (b) {
     return function (c) {
