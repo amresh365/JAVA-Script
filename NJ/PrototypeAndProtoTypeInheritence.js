@@ -13,11 +13,7 @@ Prototype: A blueprint for objects, allowing shared properties and methods.
 Prototype Inheritance: A mechanism through which an object can access properties and methods of another object, establishing 
 a parent-child relationship between objects.  
   
-  
-  
-  
-  
-  
+
   const object = {
   name: "Amresh Gupta",
   city: "Gonda",
