@@ -1,6 +1,3 @@
-In the context of web development, bubbling and capturing refer to two phases of event propagation in the Document Object 
-Model (DOM). Here's a brief overview of each:
-
 Bubbling
 Definition: Bubbling is the default mode of event propagation in which an event starts from the target element(the element 
 that triggered the event) and then propagates upward through the DOM tree to the root.
