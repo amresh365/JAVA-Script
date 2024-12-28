@@ -1,3 +1,8 @@
+Currying is the process of transforming a function that takes multiple arguments into a sequence of functions that
+each take a single argument. This allows for more flexible function calls and can enable partial application of functions
+
+
+
 //By bind method
 
 function multiply(a, b) {
